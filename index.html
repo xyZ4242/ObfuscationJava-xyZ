@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Obfuscator xyZ</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Rajdhani:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script src="https://cdn.jsdelivr.net/npm/javascript-obfuscator/dist/index.browser.js"></script>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    
+    <div class="brand-header">
+        <div class="brand-logo">JS SHIELD <i class="fas fa-shield-alt" style="font-size: 0.8em;"></i></div>
+        <div class="brand-tagline">JAVASCRIPT OBFUSCATOR xyZ</div>
+    </div>
+
+    <div id="section-input" class="fade-in">
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title"><i class="fab fa-js-square"></i> SOURCE CODE</div>
+                <button class="tool-btn" onclick="pasteCode()"><i class="fas fa-paste"></i> PASTE</button>
+            </div>
+            <div class="editor-wrapper">
+                <textarea id="inputCode" class="code-input" placeholder="// Tempel kode JavaScript kamu di sini..."></textarea>
+                <div id="errorMsg" class="error-box hidden"></div>
+            </div>
+        </div>
+
+        <div class="level-label">SECURITY LEVEL</div>
+        <div class="level-grid">
+            <div class="level-opt" onclick="setLevel('low', this)">
+                <i class="fas fa-bolt"></i>
+                <span>FAST</span>
+            </div>
+            <div class="level-opt" onclick="setLevel('medium', this)">
+                <i class="fas fa-cube"></i>
+                <span>BALANCED</span>
+            </div>
+            <div class="level-opt active" onclick="setLevel('high', this)">
+                <i class="fas fa-lock"></i>
+                <span>MAXIMUM</span>
+            </div>
+        </div>
+        
+        <div style="margin-top: 15px; font-size: 0.75rem; color: #52525b; text-align: center;">
+            <i class="fas fa-info-circle"></i> High Mode: Anti-Tamper, Dead Code, RC4 Encryption.
+        </div>
+    </div>
+
+    <div id="section-output" class="hidden">
+        <div class="card" style="border-color: var(--accent);">
+            <div class="card-header">
+                <div class="card-title" style="color: var(--accent);"><i class="fas fa-check-circle"></i> ENCRYPTED</div>
+                <div style="display: flex; gap: 8px;">
+                    <button class="tool-btn" onclick="resetView()">NEW</button>
+                    <button class="tool-btn" style="background: var(--accent); color: #000;" onclick="copyResult()">COPY</button>
+                </div>
+            </div>
+            <textarea id="outputCode" class="code-input" readonly style="color: #a1a1aa; cursor: default;"></textarea>
+        </div>
+        <div id="copyStatus" style="text-align: center; color: var(--accent); font-size: 0.8rem; height: 20px;"></div>
+    </div>
+
+</div>
+
+<div class="bottom-action">
+    <button id="actionBtn" class="main-btn" onclick="processCode()">
+        ENCRYPT NOW <i class="fas fa-rocket"></i>
+    </button>
+    <div class="footer-credit">
+        BY <span>@xyZ</span>
+    </div>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
